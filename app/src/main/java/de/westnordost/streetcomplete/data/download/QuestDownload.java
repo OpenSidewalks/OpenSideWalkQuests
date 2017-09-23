@@ -82,7 +82,7 @@ public class QuestDownload
 					 AtomicBoolean cancel)
 	{
 		this.tiles = tiles;
-		this.maxQuestTypes = maxQuestTypes;
+		this.maxQuestTypes = 100; //maxQuestTypes;
 		this.isPriority = isPriority;
 		this.cancelState = cancel;
 	}
