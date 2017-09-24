@@ -1,5 +1,10 @@
-Help to improve the OpenStreetMap with StreetComplete!
+Help improve transit and pedestrian info on OpenStreetMap!
 
-This app finds incomplete and extendable data in your vicinity and displays it on a map as markers. Each of those is solvable by answering a simple question to complete the info on site.
+This app finds map features in your vicinity that need more information and
+displays them as quest markers. Tapping a quest marker launches a simple
+survey question that, when completed, will add important and useful data on
+transit and pedestrian accessibility. For example, describing the amenities at
+a bus stop helps people with impaired vision identify and use transit stops.
 
-The info you enter is then directly added to the OpenStreetMap in your name, without the need to use another editor.
+The info you enter is then directly added to the OpenStreetMap in your name,
+without the need to use another editor.

@@ -1,1 +1,1 @@
-OpenStreetMap surveyor app
+OpenStreetMap accessibility surveyor app

@@ -18,7 +18,7 @@ android {
         minSdkVersion 17
         targetSdkVersion 26
         versionCode 200
-        versionName "2.0"
+        versionName "0.1"
         testInstrumentationRunner "android.test.InstrumentationTestRunner"
         buildConfigField "String", "MAPZEN_API_KEY", MAPZEN_API_KEY
     }
