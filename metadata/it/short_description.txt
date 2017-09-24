@@ -1,1 +1,0 @@
-app di indagine dati OpenStreetMap
