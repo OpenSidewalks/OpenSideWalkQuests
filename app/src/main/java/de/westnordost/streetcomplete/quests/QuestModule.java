@@ -36,11 +36,11 @@ public class QuestModule
 				// ↓ notes
 				osmNoteQuestType,
 
-				new AddBin(o),
-				new AddBusStopLit(o),
-				new AddPassengerInformationDisplay(o),
 				new AddBusStopBench(o),
 				new AddBusStopShelter(o),
+				new AddBusStopLit(o),
+				new AddBin(o),
+				new AddPassengerInformationDisplay(o),
 				new AddTactilePavingBusStop(o)
 		};
 
