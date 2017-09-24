@@ -50,10 +50,9 @@ public class QuestModule
 		QuestType[] questTypesOrderedByImportance = {
 				// ↓ notes
 				osmNoteQuestType,
+				new AddPassengerInformationDisplay(o),
 				new AddBusStopShelter(o),
-				new AddTactilePavingBusStop(o),
-				new AddPassengerInformationDisplay(o)
-
+				new AddTactilePavingBusStop(o)
 		};
 
 		return new QuestTypes(Arrays.asList(questTypesOrderedByImportance));
