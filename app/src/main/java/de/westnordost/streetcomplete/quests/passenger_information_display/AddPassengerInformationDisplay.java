@@ -30,7 +30,7 @@ public class AddPassengerInformationDisplay extends SimpleOverpassQuestType {
     public void applyAnswerTo(Bundle answer, StringMapChangesBuilder changes)
     {
         String yesno = answer.getBoolean(YesNoQuestAnswerFragment.ANSWER) ? "yes" : "no";
-        changes.add("passenger_info", yesno);
+        changes.add("passenger_information_display", yesno);
     }
 
     @Override public String getCommitMessage() { return "Add passenger information display at bus stops"; }
