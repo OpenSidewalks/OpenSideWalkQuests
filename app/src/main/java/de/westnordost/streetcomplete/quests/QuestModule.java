@@ -41,7 +41,7 @@ public class QuestModule
 				new AddPassengerInformationDisplay(o),
 				new AddBusStopBench(o),
 				new AddBusStopShelter(o),
-				//new AddTactilePavingBusStop(o)
+				new AddTactilePavingBusStop(o)
 		};
 
 		return new QuestTypes(Arrays.asList(questTypesOrderedByImportance));
