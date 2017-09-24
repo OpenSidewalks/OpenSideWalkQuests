@@ -35,6 +35,7 @@ import de.westnordost.streetcomplete.quests.road_name.AddRoadName;
 import de.westnordost.streetcomplete.quests.road_surface.AddRoadSurface;
 import de.westnordost.streetcomplete.quests.roof_shape.AddRoofShape;
 import de.westnordost.streetcomplete.quests.sport.AddSport;
+import de.westnordost.streetcomplete.quests.waste_basket.AddWasteBasket;
 import de.westnordost.streetcomplete.quests.way_lit.AddWayLit;
 import de.westnordost.streetcomplete.quests.wheelchair_access.AddWheelChairAccessPublicTransport;
 import de.westnordost.streetcomplete.quests.wheelchair_access.AddWheelchairAccessBusiness;
@@ -50,6 +51,7 @@ public class QuestModule
 		QuestType[] questTypesOrderedByImportance = {
 				// ↓ notes
 				osmNoteQuestType,
+				new AddWasteBasket(o),
 				new AddPassengerInformationDisplay(o),
 				new AddBusStopShelter(o),
 				new AddTactilePavingBusStop(o)
