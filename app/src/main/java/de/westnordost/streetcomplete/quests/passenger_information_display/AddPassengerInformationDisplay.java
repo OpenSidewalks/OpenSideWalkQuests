@@ -33,7 +33,7 @@ public class AddPassengerInformationDisplay extends SimpleOverpassQuestType {
         changes.add("passenger_information_display", yesno);
     }
 
-    @Override public String getCommitMessage() { return "Add passenger information display at bus stops"; }
+    @Override public String getCommitMessage() { return "Add bus stop information display"; }
     @Override public int getIcon() { return R.drawable.ic_quest_bus; }
     @Override public int getTitle(Map<String, String> tags)
     {
