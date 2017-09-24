@@ -14,6 +14,7 @@ import de.westnordost.streetcomplete.quests.baby_changing_table.AddBabyChangingT
 import de.westnordost.streetcomplete.quests.bike_parking_capacity.AddBikeParkingCapacity;
 import de.westnordost.streetcomplete.quests.bike_parking_cover.AddBikeParkingCover;
 import de.westnordost.streetcomplete.quests.building_levels.AddBuildingLevels;
+import de.westnordost.streetcomplete.quests.bus_stop_lit.AddBusStopLit;
 import de.westnordost.streetcomplete.quests.bus_stop_bench.AddBusStopBench;
 import de.westnordost.streetcomplete.quests.bus_stop_shelter.AddBusStopShelter;
 import de.westnordost.streetcomplete.quests.crossing_type.AddCrossingType;
@@ -51,10 +52,11 @@ public class QuestModule
 		QuestType[] questTypesOrderedByImportance = {
 				// ↓ notes
 				osmNoteQuestType,
+				new AddBusStopLit(o),
 				new AddPassengerInformationDisplay(o),
 				new AddBusStopBench(o),
 				new AddBusStopShelter(o),
-				new AddTactilePavingBusStop(o)
+				//new AddTactilePavingBusStop(o)
 		};
 
 		return new QuestTypes(Arrays.asList(questTypesOrderedByImportance));
