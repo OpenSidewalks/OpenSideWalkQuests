@@ -38,7 +38,10 @@ import android.widget.Toast;
 
 import java.util.Collection;
 import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 
 import javax.inject.Inject;
 
@@ -48,6 +51,7 @@ import de.westnordost.osmapi.common.errors.OsmConnectionException;
 import de.westnordost.streetcomplete.about.AboutActivity;
 import de.westnordost.streetcomplete.data.Quest;
 import de.westnordost.streetcomplete.data.QuestAutoSyncer;
+import de.westnordost.streetcomplete.data.QuestStatus;
 import de.westnordost.streetcomplete.data.upload.QuestChangesUploadProgressListener;
 import de.westnordost.streetcomplete.data.upload.QuestChangesUploadService;
 import de.westnordost.streetcomplete.data.QuestController;
@@ -105,6 +109,8 @@ public class MainActivity extends AppCompatActivity implements
 
 	private ProgressBar progressBar;
 	private AnswersCounter answersCounter;
+
+	private Queue<Quest> questsToDo;
 
 	private boolean downloadServiceIsBound;
 	private QuestDownloadService.Interface downloadService;
@@ -649,6 +655,17 @@ public class MainActivity extends AppCompatActivity implements
 		{
 			runOnUiThread(new Runnable() { @Override public void run()
 			{
+				BoundingBox bbox = new BoundingBox(quest.getMarkerLocation(), quest.getMarkerLocation());
+				List<OsmQuest> quests = questController.getOsmQuestDao().getAll(bbox, QuestStatus.NEW);
+				questsToDo = new LinkedList<Quest>();
+				if (quests.size() > 1)
+				{
+					for (int i = 1; i < quests.size(); i++)
+					{
+						questsToDo.offer(quests.get(i));
+					}
+				}
+
 				requestShowQuestDetails(quest, group, element);
 			}});
 			clickedQuestId = null;
@@ -666,6 +683,7 @@ public class MainActivity extends AppCompatActivity implements
 	@Override public synchronized void onQuestsRemoved(Collection<Long> questIds, QuestGroup group)
 	{
 		removeQuests(questIds, group);
+		tryOpenNextQuest();
 	}
 
 	@AnyThread
@@ -673,12 +691,32 @@ public class MainActivity extends AppCompatActivity implements
 	{
 		questAutoSyncer.triggerAutoUpload();
 		removeQuests(Collections.singletonList(questId), group);
+		tryOpenNextQuest();
 	}
 
 	@AnyThread
 	@Override public void onQuestReverted(long revertQuestId, QuestGroup group)
 	{
 		questAutoSyncer.triggerAutoUpload();
+	}
+
+	private void tryOpenNextQuest()
+	{
+		if (questsToDo != null)
+		{
+			Quest nextQuest = questsToDo.poll();
+			if (nextQuest != null && nextQuest instanceof OsmQuest)
+			{
+				final long questId = nextQuest.getId();
+				Element element = questController.getOsmElement((OsmQuest)nextQuest);
+				runOnUiThread(new Runnable() {
+					public void run()
+					{
+						onClickedQuest(QuestGroup.OSM, questId);
+					}
+				});
+			}
+		}
 	}
 
 	private void removeQuests(Collection<Long> questIds, QuestGroup group)
