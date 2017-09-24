@@ -246,6 +246,7 @@ The info you enter is then directly added to the OpenStreetMap in your name, wit
     <string name="quest_generic_hasFeature_yes">"Yes"</string>
     <string name="quest_generic_hasFeature_no">"No"</string>
     <string name="quest_busStopShelter_title">"Does this bus stop have a shelter?"</string>
+    <string name="quest_busStopBench_title">"Does this bus stop have a bench?"</string>
     <string name="quest_bikeParkingCapacity_title">"How many bikes can be parked here?"</string>
     <string name="quest_passengerInformationDisplay_title">"Does this bus stop have a passenger information display?"</string>
     <string name="quest_bikeParkingCapacity_hint">"Note that most normal stands can be used from both sides to park each one bike."</string>
@@ -257,6 +258,7 @@ The info you enter is then directly added to the OpenStreetMap in your name, wit
     <string name="quest_sport_manySports_confirmation_title">"You selected many sports"</string>
     <string name="quest_busStopShelter_name_title">"Does the bus stop \"%s\" have a shelter?"</string>
     <string name="quest_passengerInformation_name_title">"Does the bus stop \"%s\" have an information display?"</string>
+    <string name="quest_busStopBench_name_title">"Does the bus stop \"%s\" have a bench?"</string>
 	<string name="quest_toiletsFee_title">"Do these toilets require a fee?"</string>
     <string name="quest_baby_changing_table_toilets_title">"Does this toilet have a baby changing table?"</string>
     <string name="quest_baby_changing_table_title">"Does \"%s\" have a baby changing table?"</string>
