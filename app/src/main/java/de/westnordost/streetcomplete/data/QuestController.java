@@ -398,6 +398,11 @@ public class QuestController
 
 	}
 
+	public OsmQuestDao getOsmQuestDao()
+	{
+		return osmQuestDB;
+	}
+
 	/** @return true if a quest download triggered by the user is running */
 	public boolean isPriorityDownloadRunning()
 	{
