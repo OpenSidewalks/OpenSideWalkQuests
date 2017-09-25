@@ -2,6 +2,9 @@
 
 GoInfo is a volunteerism game for crowdsourcing pedestrian and accessibility information, and is a fork/adaptation of the [StreetComplete](https://github.com/westnordost/StreetComplete) project.
 
+A pre-release alpha is available here: https://github.com/OpenSidewalks/GoInfoGame/releases/download/v0.1a1/GoInfo.prerelease.a1.apk
+[Warning: NOT compatible with StreetComplete. You must uninstall StreetComplete to safely install the apk]
+
 Players see an overhead map view, with easy to tap icons representing 'quests'. Quests are simple surveys for missing labels in [OpenStreetMap](https://www.openstreemap.org); for example, a given quest may ask the player to say whether the sidewalk they are using is made of concrete, or asphalt, or another material. Answer are submitted directly to OpenStreetMap, and the player receives feedback and individual recognition for their contributions - everything is submitted under their OpenStreetMap account.
 
 Where GoInfo differs from StreetComplete:
